@@ -1,0 +1,105 @@
+configure terminal
+
+hostname R1
+enable secret 5 $1$PuPY$Es9ypQePejqOi2NO8WTQ90
+
+aaa new-model
+aaa authentication login default group radius local
+aaa authorization exec default group radius local 
+aaa session-id common
+
+no ip icmp rate-limit unreachable
+
+ip dhcp excluded-address 14.2.20.1 14.2.20.9
+ip dhcp pool LAN-USERS
+ network 14.2.20.0 255.255.255.128
+ dns-server 14.2.10.10 
+ default-router 14.2.20.1 
+ lease 7
+exit
+
+no ip domain lookup
+ip domain name netsec.com
+ip cef
+no ipv6 cef
+
+multilink bundle-name authenticated
+username admin privilege 15 secret 5 $1$0EDp$ww27NJGG9tASjdyYErT6Z.
+no cdp log mismatch duplex
+ip tcp synwait-time 5
+
+interface Ethernet0/0
+ ip address 14.2.20.1 255.255.255.128
+ ip nat inside
+ ip virtual-reassembly in
+ duplex auto
+ no shutdown
+exit
+
+interface Ethernet0/1
+ ip address dhcp
+ ip nat outside
+ ip virtual-reassembly in
+ duplex auto
+ no shutdown
+exit
+
+interface Ethernet0/2
+ ip address 14.2.10.1 255.255.255.0
+ ip nat inside
+ ip virtual-reassembly in
+ duplex auto
+ no shutdown
+exit
+
+interface Ethernet0/3
+ no ip address
+ duplex auto
+ no shutdown
+exit
+
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+
+ip access-list extended NAT
+ permit ip any any
+exit
+
+ip nat inside source list NAT interface Ethernet0/1 overload
+
+ip ssh version 2
+ip ssh server algorithm mac hmac-sha2-256 hmac-sha2-512
+ip ssh server algorithm encryption aes256-ctr aes192-ctr aes128-ctr
+
+ipv6 ioam timestamp
+
+radius server NPS-Server
+ address ipv4 10.0.0.175 auth-port 1812 acct-port 1813
+ key Cisco123!
+exit
+
+banner motd ^C
+------------------------------------------------------
+Topologia de Enmanuel Feliz Soto - Matricula: 20251402
+------------------------------------------------------
+^C
+
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+exit
+
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+exit
+
+line vty 0 4
+ transport input ssh
+exit
+
+end
+write memory
