@@ -26,7 +26,8 @@ Publicación de una página web personalizada (IIS) como aplicación remota (Rem
 
 ## 🗺️ Topología
 
-> 📸 ![Topología del laboratorio](./capturas/topologia.png)
+> 📸 <img width="1513" height="782" alt="Captura de pantalla 2026-07-16 163022" src="https://github.com/user-attachments/assets/b1fdfe9b-42e8-434d-bc48-9b5184e092ba" />
+
 
 **Entorno:** PNetLab — Cisco IOL + Windows Server (RDS/IIS/NPS)
 **Servidor RDS/IIS/NPS:** `WIN-BF2Q33KIN5K.NetSec.com`
@@ -119,31 +120,6 @@ debug radius
 ssh admin15@14.2.10.1
 ssh operator1@14.2.10.1
 ```
-
----
-
-## 📸 Capturas de Verificación
-
-> 📸 ![Certificado SSL asignado a los roles de RDS](./capturas/Captura%20de%20pantalla%202026-07-15%20180309.png)
-> Certificado autofirmado asignado a los cuatro roles del despliegue de RDS.
-
-> 📸 ![Portal RD Web Access](./capturas/Captura%20de%20pantalla%202026-07-15%20165404.png)
-> Acceso al portal RD Web Access vía FQDN con el certificado válido.
-
-> 📸 ![RemoteApp publicada](./capturas/Captura%20de%20pantalla%202026-07-15%20165505.png)
-> RemoteApp (Microsoft Edge → laboratorio.html) publicada y visible en el portal.
-
-> 📸 ![Grupos AD de nivel de acceso](./capturas/Captura%20de%20pantalla%202026-07-15%20151451.png)
-> Grupos de Active Directory `GroupLevel15` y `GroupLevel1` para el control de privilegios RADIUS.
-
-> 📸 ![SSH admin15 vía RADIUS](./capturas/ssh_admin15.png)
-> Conexión SSH del usuario `admin15` (nivel de acceso 15) autenticado vía RADIUS contra `14.2.10.1`.
-
-> 📸 ![SSH operator1 vía RADIUS](./capturas/ssh_operator1.png)
-> Conexión SSH del usuario `operator1` (nivel de acceso 1) autenticado vía RADIUS, con permisos restringidos.
-
-<!-- Coloca aquí capturas adicionales si el docente las requiere -->
-
 ---
 
 ## 🔍 Análisis y Comparativa
@@ -165,9 +141,9 @@ ssh operator1@14.2.10.1
 | Recurso | Enlace |
 |---------|--------|
 | Repositorio Principal | [Enmafs/NetSec](https://github.com/Enmafs/NetSec) |
-| Script / documentación de configuración | [`EnmanuelFelizSoto_2025-1402_RDS_RemoteApp_RADIUS_P4.txt`](./EnmanuelFelizSoto_2025-1402_RDS_RemoteApp_RADIUS_P4.txt) |
-| Informe técnico (PDF) | [`Informe_Tecnico_20251402_RDS_RADIUS.docx`](./Informe_Tecnico_20251402_RDS_RADIUS.docx) |
-| Video demostración | 🎬 (https://youtu.be/09i8jckBX54) |
+| Script / documentación de configuración | [`Cript.txt`](https://github.com/Enmafs/EnmanuelFelizSoto_20251402_DMZ-JUMP-Server-RADIUS_P5/blob/main/EnmanuelFelizSoto_20251402_Script_P5) |
+| Informe técnico (PDF) | [`Informe.PDF`](https://github.com/Enmafs/EnmanuelFelizSoto_20251402_DMZ-JUMP-Server-RADIUS_P5/blob/main/EnmanuelFelizSoto_20251402_Informe_P5.pdf) |
+| Video demostración | 🎬 [Video](https://youtu.be/09i8jckBX54) |
 
 ---
 
