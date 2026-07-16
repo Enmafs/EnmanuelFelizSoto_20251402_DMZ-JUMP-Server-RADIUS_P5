@@ -141,7 +141,7 @@ ssh operator1@14.2.10.1
 | Recurso | Enlace |
 |---------|--------|
 | Repositorio Principal | [Enmafs/NetSec](https://github.com/Enmafs/NetSec) |
-| Script / documentación de configuración | [`Cript.txt`](https://github.com/Enmafs/EnmanuelFelizSoto_20251402_DMZ-JUMP-Server-RADIUS_P5/blob/main/EnmanuelFelizSoto_20251402_Script_P5) |
+| Script / documentación de configuración | [`Script.txt`](https://github.com/Enmafs/EnmanuelFelizSoto_20251402_DMZ-JUMP-Server-RADIUS_P5/blob/main/EnmanuelFelizSoto_20251402_Script_P5) |
 | Informe técnico (PDF) | [`Informe.PDF`](https://github.com/Enmafs/EnmanuelFelizSoto_20251402_DMZ-JUMP-Server-RADIUS_P5/blob/main/EnmanuelFelizSoto_20251402_Informe_P5.pdf) |
 | Video demostración | 🎬 [Video](https://youtu.be/09i8jckBX54) |
 
